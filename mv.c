@@ -1,4 +1,4 @@
-//파일 이름 바꾸는 시스템콜 함수
+
 #include "myheader.h"
 
 int mv_main(){
