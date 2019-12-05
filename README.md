@@ -1,2 +1,4 @@
 # finder
-System Programming Project
+
+Konkuk Univ. System Programming Project
+
