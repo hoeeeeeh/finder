@@ -7,7 +7,11 @@ int makefiles()
 	char name[10];
 	strcpy(dir, finder("생성할 디렉토리를 선택해주세요 "));
 	printf("생성할 디렉토리의 이름을 설정해주세요(10자) : ");
+	while(1){
 	fgets(name , sizeof(name) , stdin );
+	if(!(strlen(name)==1 && name[0]=='\n')) break;
+	}
+	name[strlen(name)-1] = '\0';
 	strcat(dir, "/");
 	strcat(dir,name);
 	if((fd=open(dir,O_RDWR | O_CREAT | O_TRUNC |  O_EXCL, 0777)) == -1){  
