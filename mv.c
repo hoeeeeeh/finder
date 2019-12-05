@@ -14,10 +14,6 @@ int mv_main(){
         }
 
         if(childpid==0){
-        //      printf("기존 파일 명 : "); scanf("%s",oldpath);
-        //      printf("중간 ");
-        //      printf("바꿀 파일 명 : "); scanf("%s",newpath);
-
                 execl("/bin/mv","mv",oldpath,newpath,NULL);
                 perror("Child failed to rename");
                 return 1;
