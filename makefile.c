@@ -4,9 +4,9 @@ int makefiles()
 {
 	int fd;
 	char dir[256];
-	char name[10];
+	char name[200];
 	strcpy(dir, finder("생성할 디렉토리를 선택해주세요 "));
-	printf("생성할 디렉토리의 이름을 설정해주세요(10자) : ");
+	printf("생성할 파일의 이름을 설정해주세요(10자) : ");
 	while(1){
 	fgets(name , sizeof(name) , stdin );
 	if(!(strlen(name)==1 && name[0]=='\n')) break;
@@ -23,7 +23,7 @@ int makefiles()
 
 void mkrm_main(){
 	int select;
-	printf("1.파일생성\t2.디렉토리생성\t3.제거");
+	printf("1.파일생성\t2.디렉토리생성\t3.제거\n");
 	scanf("%d",&select);
 	switch(select){
 		case 1:

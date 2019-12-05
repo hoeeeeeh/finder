@@ -8,7 +8,7 @@ void copy_main(){
 
     char filename[256];
 
-    printf("1.복사\t2.한 파일을 여러 폴더에 복사");
+    printf("1.복사\t2.한 파일을 여러 폴더에 복사\n");
     scanf("%d",&selectNum);
 
     printf("사본 파일의 이름을 정해주세요\n");
@@ -43,10 +43,11 @@ int copy_paste(char* originFile, char* folder_dir, char* filename){
 
     DIR *isDir = opendir(originFile);
     if(isDir != NULL){
-        printf("복사할 것이 파일이 아닙니다.");
-        return 0;
+         printf("복사할 것이 파일이 아닙니다.");
+         return 0;
+         closedir(isDir);
     }
-    closedir(isDir);
+    
 
     if(fdin == -1){
         perror("파일을 여는 도중 오류가 발생했습니다.");
