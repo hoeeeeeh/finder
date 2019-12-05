@@ -157,4 +157,4 @@ char* finder(char* text)
     return dir;
     
 }
-
+/* aaa*/

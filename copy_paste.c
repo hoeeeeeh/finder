@@ -43,21 +43,21 @@ int copy_paste(char* originFile, char* folder_dir, char* filename){
 
     DIR *isDir = opendir(originFile);
     if(isDir != NULL){
-        perror("복사할 것이 파일이 아닙니다.");
-        exit(0);
+        printf("복사할 것이 파일이 아닙니다.");
+        return 0;
     }
     closedir(isDir);
 
     if(fdin == -1){
         perror("파일을 여는 도중 오류가 발생했습니다.");
-        exit(errno);
+        return 0;
     }
 
     fdout = open(copiedFile, O_WRONLY|O_CREAT|O_EXCL, st.st_mode);
 
     if(fdout == -1){
         perror("해당 이름을 가진 파일이 이미 존재하거나 복사 될 곳이 디렉토리가 아닙니다.");
-        exit(errno);
+        return 0;
     }
 
     while ((nb = read(fdin, buf, 4096)) > 0) {

@@ -1,4 +1,4 @@
-//파일 이름 바꾸는 시스템콜 함수
+
 #include "myheader.h"
 
 int mv_main(){
@@ -14,10 +14,6 @@ int mv_main(){
         }
 
         if(childpid==0){
-        //      printf("기존 파일 명 : "); scanf("%s",oldpath);
-        //      printf("중간 ");
-        //      printf("바꿀 파일 명 : "); scanf("%s",newpath);
-
                 execl("/bin/mv","mv",oldpath,newpath,NULL);
                 perror("Child failed to rename");
                 return 1;
